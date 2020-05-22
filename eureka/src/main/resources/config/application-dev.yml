@@ -1,0 +1,17 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.ip-address}:${server.port}/eureka/
+    register-with-eureka: false
+    fetch-registry: false
+  instance:
+    ip-address: localhost
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    org.luojin.eureka: debug

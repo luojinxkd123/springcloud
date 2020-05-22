@@ -1,0 +1,10 @@
+[2020-05-22 10:35:21.360] [main] org.luojin.zuul.ZuulApplication [658] - The following profiles are active: dev
+[2020-05-22 10:35:33.262] [main] org.luojin.zuul.ZuulApplication [59] - Started ZuulApplication in 16.205 seconds (JVM running for 18.121)
+[2020-05-22 10:48:59.027] [main] org.luojin.zuul.ZuulApplication [658] - The following profiles are active: dev
+[2020-05-22 10:49:14.204] [main] org.luojin.zuul.ZuulApplication [59] - Started ZuulApplication in 26.47 seconds (JVM running for 28.482)
+[2020-05-22 11:30:36.695] [main] org.luojin.apptest.AppTestApplication [658] - The following profiles are active: dev
+[2020-05-22 11:30:44.497] [main] org.luojin.apptest.AppTestApplication [59] - Started AppTestApplication in 11.992 seconds (JVM running for 13.864)
+[2020-05-22 11:31:55.301] [main] org.luojin.apptest.AppTestApplication [658] - The following profiles are active: dev
+[2020-05-22 11:32:07.794] [main] org.luojin.apptest.AppTestApplication [59] - Started AppTestApplication in 16.976 seconds (JVM running for 18.896)
+[2020-05-22 11:33:06.539] [main] org.luojin.eureka.EurekaApplication [658] - The following profiles are active: dev
+[2020-05-22 11:33:16.275] [main] org.luojin.eureka.EurekaApplication [59] - Started EurekaApplication in 14.728 seconds (JVM running for 16.748)
