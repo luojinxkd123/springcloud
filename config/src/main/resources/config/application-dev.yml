@@ -1,0 +1,23 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/luojinxkd123/springcloud
+          search-paths: /repo
+          username: luojinxkd123@gmail.com
+          password: Luojin123
+          default-label: master
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+
+logging:
+  level:
+    org.luojin.config: debug
