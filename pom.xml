@@ -11,6 +11,7 @@
         <module>config</module>
         <module>bus</module>
         <module>app-test</module>
+        <module>mq</module>
     </modules>
 
     <groupId>org.luojin.springboot</groupId>
@@ -76,6 +77,18 @@
            <dependency>
                <groupId>org.springframework.boot</groupId>
                <artifactId>spring-boot-starter-actuator</artifactId>
+               <version>${spring.boot.version}</version>
+           </dependency>
+           <!--mq-->
+           <dependency>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-starter-amqp</artifactId>
+               <version>${spring.boot.version}</version>
+           </dependency>
+           <!--mail-->
+           <dependency>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-starter-mail</artifactId>
                <version>${spring.boot.version}</version>
            </dependency>
        </dependencies>

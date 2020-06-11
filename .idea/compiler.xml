@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="apptest" />
-        <module name="bus" />
-        <module name="config" />
-        <module name="eureka" />
         <module name="zuul" />
+        <module name="eureka" />
+        <module name="mq" />
+        <module name="app-test" />
+        <module name="config" />
+        <module name="bus" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

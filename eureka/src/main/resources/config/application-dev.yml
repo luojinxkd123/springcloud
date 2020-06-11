@@ -12,6 +12,6 @@ eureka:
   instance:
     ip-address: localhost
 logging:
-  config: classpath:logback-spring.xml
+  config: classpath:config/logback-spring.xml
   level:
     org.luojin.eureka: debug
