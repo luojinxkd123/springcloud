@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="apptest" />
         <module name="zuul" />
+        <module name="cache" />
         <module name="eureka" />
         <module name="mq" />
         <module name="app-test" />
@@ -15,8 +16,6 @@
         <module name="bus" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="login" target="1.5" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="8" />
   </component>
 </project>
