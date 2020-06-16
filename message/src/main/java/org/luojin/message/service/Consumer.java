@@ -15,12 +15,17 @@ public class Consumer {
     @RabbitListener(queues = "mail.queue")
     public void listener1(Message message, Channel channel) throws Exception {
         System.out.println("消费者1"+message.toString());
-        channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+        try {
+            Thread.sleep(3000);
+            channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+        } catch (Exception e) {
+            channel.basicNack(message.getMessageProperties().getDeliveryTag(), false, true);
+        }
     }
 
-    @RabbitListener(queues = "mail.queue")
-    public void listener2(Message message, Channel channel) throws Exception {
-        System.out.println("消费者2"+message.toString());
-        channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
-    }
+//    @RabbitListener(queues = "mail.queue")
+//    public void listener2(Message message, Channel channel) throws Exception {
+//        System.out.println("消费者2"+message.toString());
+//        channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+//    }
 }

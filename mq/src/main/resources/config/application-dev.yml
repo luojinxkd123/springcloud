@@ -10,7 +10,7 @@ spring:
     username: guest
     password: guest
     connection-timeout: 5s
-
+    publisher-confirms: true
 eureka:
   client:
     service-url:

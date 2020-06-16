@@ -9,10 +9,15 @@ spring:
     port: 5672
     username: guest
     password: guest
-    connection-timeout: 5s
     listener:
       direct:
         acknowledge-mode: manual
+      simple:
+        max-concurrency: 1
+        concurrency: 1
+        retry:
+          enabled: true
+    publisher-returns: true
 
 eureka:
   client:
