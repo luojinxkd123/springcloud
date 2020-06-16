@@ -10,14 +10,18 @@ spring:
     username: guest
     password: guest
     listener:
-      direct:
-        acknowledge-mode: manual
       simple:
         max-concurrency: 1
         concurrency: 1
         retry:
           enabled: true
+        acknowledge-mode: manual
     publisher-returns: true
+  mail:
+    host: smtp.qq.com
+    username: 742411332@qq.com
+    password: jsycvwqhjiyxbfjh
+    default-encoding: utf-8
 
 eureka:
   client:
@@ -27,5 +31,6 @@ eureka:
 logging:
   config: classpath:config/logback-spring.xml
   level:
+    org.springframework.amqp.rabbit: error
     org.luojin.message: debug
 

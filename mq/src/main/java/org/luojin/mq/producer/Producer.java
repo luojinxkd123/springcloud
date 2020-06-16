@@ -15,7 +15,7 @@ public class Producer {
     @Resource
     private RabbitTemplate rabbitTemplate;
     public void send() {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             rabbitTemplate.convertAndSend("mail.exchange","mail", "你好" + i);
         }
     }
