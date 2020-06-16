@@ -1,15 +1,18 @@
 server:
-  port: 8083
+  port: 8084
 
 spring:
   application:
-    name: mq
+    name: message
   rabbitmq:
     host: 127.0.0.1
     port: 5672
     username: guest
     password: guest
     connection-timeout: 5s
+    listener:
+      direct:
+        acknowledge-mode: manual
 
 eureka:
   client:
@@ -19,5 +22,5 @@ eureka:
 logging:
   config: classpath:config/logback-spring.xml
   level:
-    org.luojin.mq: debug
+    org.luojin.message: debug
 

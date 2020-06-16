@@ -12,6 +12,7 @@
         <module>bus</module>
         <module>app-test</module>
         <module>mq</module>
+        <module>message</module>
     </modules>
 
     <groupId>org.luojin.springboot</groupId>

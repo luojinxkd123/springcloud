@@ -1,7 +1,6 @@
 package org.luojin.mq.producer;
 
 import org.springframework.amqp.core.AmqpTemplate;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -16,6 +15,8 @@ public class Producer {
     @Resource
     private AmqpTemplate rabbitTemplate;
     public void send() {
-        rabbitTemplate.convertAndSend("luojin","你好");
+        for (int i = 0; i < 100; i++) {
+            rabbitTemplate.convertAndSend("luojin", "你好" + i);
+        }
     }
 }
