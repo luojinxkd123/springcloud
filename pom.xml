@@ -13,6 +13,7 @@
         <module>app-test</module>
         <module>mq</module>
         <module>message</module>
+        <module>cache</module>
     </modules>
 
     <groupId>org.luojin.springboot</groupId>
@@ -90,6 +91,24 @@
            <dependency>
                <groupId>org.springframework.boot</groupId>
                <artifactId>spring-boot-starter-mail</artifactId>
+               <version>${spring.boot.version}</version>
+           </dependency>
+           <!--cache-->
+           <dependency>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-starter-cache</artifactId>
+               <version>${spring.boot.version}</version>
+           </dependency>
+           <!--redis-->
+           <dependency>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-starter-data-redis</artifactId>
+               <version>${spring.boot.version}</version>
+           </dependency>
+           <!--jdbc-->
+           <dependency>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-starter-jdbc</artifactId>
                <version>${spring.boot.version}</version>
            </dependency>
        </dependencies>
