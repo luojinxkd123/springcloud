@@ -3,11 +3,7 @@ package org.luojin.message.service;
 import com.rabbitmq.client.Channel;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.amqp.support.AmqpHeaders;
-import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.stereotype.Component;
-
-import java.io.IOException;
 
 /**
  * @author:luojin
@@ -16,15 +12,15 @@ import java.io.IOException;
  */
 @Component
 public class Consumer {
-    @RabbitListener(queues = "luojin")
-    public String listener(Message message, Channel channel, @Header(AmqpHeaders.DELIVERY_TAG) long tag) throws InterruptedException {
+    @RabbitListener(queues = "mail.queue")
+    public void listener1(Message message, Channel channel) throws Exception {
+        System.out.println("消费者1"+message.toString());
+        channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+    }
 
-        System.out.println(message);
-        try {
-            channel.basicAck(tag, true);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return "成功";
+    @RabbitListener(queues = "mail.queue")
+    public void listener2(Message message, Channel channel) throws Exception {
+        System.out.println("消费者2"+message.toString());
+        channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
     }
 }

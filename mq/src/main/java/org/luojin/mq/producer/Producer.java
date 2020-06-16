@@ -16,7 +16,7 @@ public class Producer {
     private AmqpTemplate rabbitTemplate;
     public void send() {
         for (int i = 0; i < 100; i++) {
-            rabbitTemplate.convertAndSend("luojin", "你好" + i);
+            rabbitTemplate.convertAndSend("mail.exchange","mail", "你好" + i);
         }
     }
 }
