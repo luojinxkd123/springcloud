@@ -6,16 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="apptest" />
-        <module name="zuul" />
-        <module name="cache" />
-        <module name="eureka" />
-        <module name="mq" />
         <module name="app-test" />
-        <module name="config" />
+        <module name="bank01" />
+        <module name="bank02" />
         <module name="bus" />
+        <module name="cache" />
+        <module name="config" />
+        <module name="eureka" />
+        <module name="message" />
+        <module name="mq" />
+        <module name="zuul" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8" />
   </component>
 </project>

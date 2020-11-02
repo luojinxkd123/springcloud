@@ -17,14 +17,17 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class MqConfig {
+    /*
+    思路：消息先到交换机（存储着绑定信息），经过信道（routeKey为标识的实体路由），发送到队列（queue：每个都是一个进程）
+     */
     @Bean
     public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
         RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
         rabbitTemplate.setConfirmCallback((correlationData, b, s) -> {
             if (b) {
-                System.out.println("成功");
+                System.out.println("投递成功");
             } else {
-                System.out.println("失败");
+                System.out.println("投递失败");
             }
         });
         return rabbitTemplate;

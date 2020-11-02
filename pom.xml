@@ -14,6 +14,8 @@
         <module>mq</module>
         <module>message</module>
         <module>cache</module>
+        <module>bank01</module>
+        <module>bank02</module>
     </modules>
 
     <groupId>org.luojin.springboot</groupId>
