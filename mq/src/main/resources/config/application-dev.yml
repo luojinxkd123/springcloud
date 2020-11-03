@@ -11,6 +11,10 @@ spring:
     password: guest
     connection-timeout: 5s
     publisher-confirms: true
+    publisher-returns: true
+    template:
+      mandatory: true
+
 
 eureka:
   client:

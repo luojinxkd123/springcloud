@@ -1,9 +1,6 @@
 package org.luojin.mq.config;
 
-import org.springframework.amqp.core.Binding;
-import org.springframework.amqp.core.BindingBuilder;
-import org.springframework.amqp.core.Queue;
-import org.springframework.amqp.core.TopicExchange;
+import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.context.annotation.Bean;
@@ -29,6 +26,10 @@ public class MqConfig {
             } else {
                 System.out.println("投递失败");
             }
+        });
+        rabbitTemplate.setReturnCallback((message, i, s, s1, s2) -> {
+            //只有当exchange===>queue失败回调才会触发
+            System.out.println(message + "\t" + i + "\t" + s + "\t" + s1 + "\t" + s2);
         });
         return rabbitTemplate;
     }

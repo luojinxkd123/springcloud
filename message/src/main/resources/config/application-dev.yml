@@ -15,7 +15,7 @@ spring:
         concurrency: 1
         retry:
           enabled: true
-        acknowledge-mode: manual
+        acknowledge-mode: manual  #手动模式必须开启保证消息不丢失
     publisher-returns: true
   mail:
     host: smtp.qq.com
