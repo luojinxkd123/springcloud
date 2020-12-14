@@ -16,5 +16,5 @@ logging:
 zuul:
   routes:
     user-route:
-      path: /**
-      service-id: apptest
+      path: /apptest/*,/feign/*
+      service-id: apptest,feign

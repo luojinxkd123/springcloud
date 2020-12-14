@@ -1,0 +1,24 @@
+server:
+  port: 8089
+
+spring:
+  application:
+    name: sleuth
+  #服务跟踪消息收集率，1代表每一条都收集，0.1代表收集百分之10，如果不配置，有个默认的百分比的
+  sleuth:
+    sampler:
+      probability: 0.1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+
+logging:
+  config: classpath:config/logback-spring.xml
+  level:
+    org.luojin.cache: debug
+
+debug: true
+
+
+

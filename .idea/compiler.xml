@@ -13,8 +13,11 @@
         <module name="cache" />
         <module name="config" />
         <module name="eureka" />
+        <module name="feign" />
+        <module name="kafka" />
         <module name="message" />
         <module name="mq" />
+        <module name="sleuth" />
         <module name="zuul" />
       </profile>
     </annotationProcessing>

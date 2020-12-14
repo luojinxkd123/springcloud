@@ -16,6 +16,9 @@
         <module>cache</module>
         <module>bank01</module>
         <module>bank02</module>
+        <module>kafka</module>
+        <module>sleuth</module>
+        <module>feign</module>
     </modules>
 
     <groupId>org.luojin.springboot</groupId>
