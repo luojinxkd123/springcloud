@@ -11,6 +11,11 @@ eureka:
     fetch-registry: false
   instance:
     ip-address: localhost
+  server:
+    # 默认是true，调整为false，关闭eureka的自我保护
+    enable-self-preservation: false
+    # 每隔 10 秒清理服务列表 （默认值 60*1000 是1分钟）
+    eviction-interval-timer-in-ms: 10000
 logging:
   config: classpath:config/logback-spring.xml
   level:

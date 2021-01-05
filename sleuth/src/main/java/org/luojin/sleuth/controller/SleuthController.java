@@ -16,7 +16,6 @@ public class SleuthController {
     @Autowired
     @GetMapping("/find")
     public String find() {
-
-        return null;
+        return "find sleuth datas";
     }
 }

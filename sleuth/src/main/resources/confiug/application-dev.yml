@@ -1,5 +1,5 @@
 server:
-  port: 8089
+  port: 8093
 
 spring:
   application:
@@ -7,7 +7,14 @@ spring:
   #服务跟踪消息收集率，1代表每一条都收集，0.1代表收集百分之10，如果不配置，有个默认的百分比的
   sleuth:
     sampler:
-      probability: 0.1
+      probability: 1
+  zipkin:
+    base-url: http://localhost:8093
+  datasource:
+    url: jdbc:mysql://localhost:3306/zipkin
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password:
 eureka:
   client:
     service-url:
@@ -16,9 +23,8 @@ eureka:
 logging:
   config: classpath:config/logback-spring.xml
   level:
-    org.luojin.cache: debug
+    org.luojin.sleuth: debug
 
 debug: true
-
 
 

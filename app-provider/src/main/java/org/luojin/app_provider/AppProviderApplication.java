@@ -1,19 +1,16 @@
-package org.luojin.sleuth;
+package org.luojin.app_provider;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import zipkin2.server.internal.EnableZipkinServer;
 
 /**
  * @author:luojin
  * @apiNote:
- * @since: 2020-12-14 16:23
+ * @since: 2020-12-23 10:22
  */
 @SpringBootApplication
-@EnableZipkinServer
-public class SleuthApplication {
+public class AppProviderApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SleuthApplication.class, args);
+        SpringApplication.run(AppProviderApplication.class, args);
     }
-
 }

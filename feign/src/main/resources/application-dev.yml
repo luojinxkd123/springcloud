@@ -9,7 +9,61 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8080/eureka/
-
+    #将实例信息变更同步到 Eureka Server的初始延迟时间
+    initial-instance-info-replication-interval-seconds: 5
+    #拉取注册信息缓存更新时间间隔
+    registry-fetch-interval-seconds: 5
+  instance:
+    lease-renewal-interval-in-seconds: 30 #心跳时间
+    lease-expiration-duration-in-seconds: 60 #服务续期时间
 logging:
   level:
     org.luojin.feign: debug
+
+APP-PROVIDER:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+    #此处对APP-PROVIDER设置随机算法
+    ConnectTimeout: 30000
+    ReadTimeout: 60000
+    MaxAutoRetries: 1 #对第一次请求的服务的重试次数
+    MaxAutoRetriesNextServer: 1 #要重试的下一个服务的最大数量（不包括第一个服务）
+    OkToRetryOnAllOperations: true
+
+#开启feign调用的服务降级
+feign:
+  hystrix:
+    enabled: true
+#开启hystrix熔断机制
+hystrix:
+  command:
+    default:
+      #开启熔断
+      execution:
+        timeout:
+          enabled: true
+      #超时时间
+      isolation:
+        thread:
+          timeoutInMilliseconds: 1000
+      #熔断参数
+      circuitBreaker:
+        #熔断触发的最小个数，即在一定的时间窗口内请求达到一定的次数，默认20
+        requestVolumeThreshold: 1
+        #失败率达到多少百分比后熔断 默认值：50
+        errorThresholdPercentage: 50
+        #熔断多长时间后，尝试放一次请求进来，默认5秒
+        sleepWindowInMilliseconds: 10000
+      #时间窗口，默认10s
+      metrics:
+        rollingStats:
+          timeInMilliseconds: 30000
+
+
+
+
+ribbon:
+  #ribbon请求连接的超时时间-并不限制服务处理的返回时间
+  connectTimeout: 1000
+  #请求处理的超时时间 下级服务响应最大时间,超出时间消费方（路由也是消费方）返回timeout,超时时间不可大于断路器的超时时间
+  readTimeout: 2000
