@@ -1,0 +1,36 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffcca9535e3, pid=121096, tid=124752
+#
+# JRE version: OpenJDK Runtime Environment JBR-11.0.9.1.11-1145.63-jcef (11.0.9.1+11) (build 11.0.9.1+11-b1145.63)
+# Java VM: OpenJDK 64-Bit Server VM JBR-11.0.9.1.11-1145.63-jcef (11.0.9.1+11-b1145.63, mixed mode, tiered, compressed oops, g1 gc, windows-amd64)
+# Problematic frame:
+# V  [jvm.dll+0x3735e3]
+#
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: org.jetbrains.git4idea.http.GitAskPassApp Username for 'https://github.com': 
+
+Host: Intel(R) Core(TM) i5-6500T CPU @ 2.50GHz, 4 cores, 15G,  Windows 10 , 64 bit Build 17763 (10.0.17763.475)
+Time: Tue Jan  5 11:15:11 2021 ?D1¨²¡À¨º¡Á?¨º¡À?? elapsed time: 0.619689 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000021311c14000):  JavaThread "Signal Dispatcher" daemon [_thread_in_vm, id=124752, stack(0x000000c45be00000,0x000000c45bf00000)]
+
+Stack: [0x000000c45be00000,0x000000c45bf00000],  sp=0x000000c45beff410,  free space=1021k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x3735e3]
+V  [jvm.dll+0x5edcc2]
+V  [jvm.dll+0x373f9a]
+V  [jvm.dll+0x374227]
+V  [jvm.dll+0x6e6594]
+V  [jvm.dll+0x6eb778]
+V  [jvm.dll+0x6e42d5]

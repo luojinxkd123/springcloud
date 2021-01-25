@@ -21,6 +21,7 @@
         <module>feign</module>
         <module>app-provider</module>
         <module>hystrix-dashboard</module>
+        <module>gateway</module>
     </modules>
 
     <groupId>org.luojin.springboot</groupId>
@@ -118,11 +119,6 @@
                <artifactId>spring-boot-starter-jdbc</artifactId>
                <version>${spring.boot.version}</version>
            </dependency>
-           <dependency>
-               <groupId>org.springframework.cloud</groupId>
-               <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-               <version>1.4.7.RELEASE</version>
-           </dependency>
        </dependencies>
     </dependencyManagement>
     <build>
@@ -135,6 +131,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
